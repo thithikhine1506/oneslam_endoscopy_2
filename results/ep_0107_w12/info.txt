@@ -1,0 +1,4 @@
+Dataset path /rhome/tkhin002/bigdata/oneslam/data/1GP_Endoscopy_0107_0137
+Update FPS: 1.018807090617987
+Tracking FPS: 4.358985756171524
+Mapping FPS: 0.11659489177529071

@@ -1,0 +1,21 @@
+# Frame sequences and video - derivative works of the source footage
+images/
+*.png
+*.MP4
+*.mp4
+!docs/**/*.png
+
+# OneSLAM intermediate state - large, reproducible from runs
+*.pickle
+point_tracks/
+dataset/
+
+# Third-party data - do not redistribute
+SINUS_*
+*.zip
+
+# Environment
+__pycache__/
+*.pyc
+.DS_Store
+*.log
