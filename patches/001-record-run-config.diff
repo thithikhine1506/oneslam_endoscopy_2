@@ -1,0 +1,21 @@
+diff --git a/run_slam.py b/run_slam.py
+index ff27ee9..deea524 100644
+--- a/run_slam.py
++++ b/run_slam.py
+@@ -110,6 +110,16 @@ torch.backends.cudnn.benchmark = False
+ torch.autograd.set_detect_anomaly(mode=False)
+ torch.autograd.profiler.profile(enabled=False)
+ 
++# Record the full run configuration alongside the outputs.
++# run_slam.py otherwise writes only timing (info.txt), which makes a
++# completed experiment impossible to reproduce after the fact.
++import json as _json
++import os as _os
++_run_dir = _os.path.join(args.output_folder, args.name)
++_os.makedirs(_run_dir, exist_ok=True)
++with open(_os.path.join(_run_dir, 'args.json'), 'w') as _f:
++    _json.dump(vars(args), _f, indent=2, sort_keys=True)
++
+ #################################################
+ # Dataset/Data management and bundle adjustment #
+ #################################################
